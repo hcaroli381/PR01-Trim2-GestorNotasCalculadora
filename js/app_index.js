@@ -3,10 +3,20 @@ const mes = Number(params.get("mes"));
 const listaNotas = document.querySelector("#listaNotas");
 const btnListaNotas = document.querySelector("#btnListaNotas");
 const btnLimpiarCalendario = document.querySelector("#btnLimpiarCalendario");
+const listaMeses = document.querySelectorAll(".item");
 
+console.log(listaMeses);
+
+function aplicarEstilosMeses(){
+    for(let i = 0;i < listaMeses.length ; i++ ){
+        if(i%2 == 0){
+            listaMeses[i].classList.add("notasAdded");
+        }
+    }
+}
 
 let notasGlobales = JSON.parse(localStorage.getItem("calendarioNotas")) || [];
-
+aplicarEstilosMeses();
 
 btnLimpiarCalendario.addEventListener("click", () => {
     if (confirm("¿Estás seguro de borrar TODAS las notas?")) {

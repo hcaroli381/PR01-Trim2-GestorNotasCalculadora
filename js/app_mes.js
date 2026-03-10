@@ -64,7 +64,7 @@ function eliminarNotaStorage(nota) {
     notaBorrado = JSON.parse(notaBorrado);
     for (let i = 0; i < notaBorrado.length; i++) {
         if ((notaBorrado[i].mes === nota.mes)&& (notaBorrado[i].titulo === nota.titulo)&&(notaBorrado[i].descripcion === nota.descripcion)) {
-            
+            notaBorrado[i] = "";
         }
     }
     

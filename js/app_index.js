@@ -15,8 +15,9 @@ function aplicarEstilosMeses() {
 
     for (let i = 0; i < listaMeses.length; i++) {
         for (let j = 0; j < notasGenerales.length; j++) {
-            if (notasGenerales[j] !== null) {
+            if (notasGenerales[j] && notasGenerales[j].mes === i) {
                 listaMeses[i].classList.add("notasAdded");
+
             }
 
         }

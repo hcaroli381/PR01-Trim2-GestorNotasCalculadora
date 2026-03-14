@@ -36,3 +36,16 @@ btnLimpiarCalendario.addEventListener("click", () => {
         location.reload();
     }
 });
+btnListaNotas.addEventListener("click", () => {
+    listaNotas.innerHTML = "";
+    notasGenerales = JSON.parse(localStorage.getItem("calendarioNota"));
+    let notaInd;
+    if (notasGenerales !== null) {
+        for (let i = 0; i < notasGenerales.length; i++) {
+            notaInd = document.createElement('li');
+            notaInd.textContent = `${notasGenerales[i].titulo}: ${notasGenerales[i].descripcion}`;
+            listaNotas.appendChild(notaInd);
+        }
+    }
+
+});
